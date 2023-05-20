@@ -1,0 +1,42 @@
+#title{
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#sign_in{
+    background-color: #1faf80;
+    margin-top: 5vh;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+#create_account{
+    background-color: #8dfea8;
+    color: #295650;
+    width: 200px;
+}
+
+#logo{
+    width: 250px;
+    height: 250px;
+}
+
+.card-body{
+    margin-left: 10%; 
+}
+
+input[type="text"] , input[type="password"]{
+    width: 85%;
+}
+
+input[type="color"] {
+    margin-left: 20px;
+    height: 20px;
+    width: 80px;
+}
+
+.rowItem{
+    margin-top: 20px;
+}
