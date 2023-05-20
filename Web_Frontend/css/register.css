@@ -10,16 +10,14 @@
     margin-right: 10%; 
 }
 
-input[type="text"] {
-    width: 85%;
-}
-
-input[type="color"] {
-    margin-left: 20px;
-    height: 20px;
-    width: 80px;
+input {
+    width: 100%;
 }
 
 .rowItem{
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction:  column;
+    margin-left: 7.5%;
+    margin-right:7.5%;
 }

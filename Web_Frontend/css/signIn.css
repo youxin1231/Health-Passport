@@ -6,11 +6,12 @@
 }
 
 .card-body{
-    margin-left: 10%; 
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-input[type="text"] , input[type="password"]{
-    width: 85%;
+input{
+    width: 100%;
 }
 
 input[type="color"] {
@@ -20,5 +21,9 @@ input[type="color"] {
 }
 
 .rowItem{
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction:  column;
+    margin-left: 7.5%;
+    margin-right:7.5%;
 }
