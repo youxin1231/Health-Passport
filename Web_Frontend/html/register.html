@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <title>Health Passport</title>
 </head>
-<body style="background-color: #3364a2;">
+<body style="background-color: #295650;">
     <header style="height: 130px"></header>
     <h3 id="title" style="align-items: center; font-weight: bold; color: #fcfeff;">Register</h3>
     <div class="container-sm" style="max-width: 500px;">
@@ -25,10 +25,16 @@
               <input id="pwd" type="text" required>
             </div>
             <div class="rowItem">
-              Email addresss
-              <input id="mail" type="email" placeholder="name@example.com" required>
+              National ID No.
+              <input id="national_id" placeholder="A123456789" type="text" required>
             </div>
-            <button id="reg" type="button" class="btn btn-secondary">Register</button>
+            <div class="rowItem">
+              <label for="mail">Email address</label>
+              <input id="mail" type="text" placeholder="name@example.com" required>
+            </div>
+            <div class="rowItem" style="position: relative; text-align: center;">
+              <button id="reg" type="button" class="btn btn-secondary">Register</button>
+            </div>
             <div class="rowItem">
               <span>
                 <label>Already have account? </label>

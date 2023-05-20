@@ -6,10 +6,9 @@
     $msg = $_POST['msg'];
     $pwd = $_POST['pwd'];
     $mail = $_POST['mail'];
-    $color = $_POST['color'];
-    $gender = $_POST['gender'];
+    $national_id = $_POST['national_id'];
 
 
-    $sql = "INSERT INTO `data` (`name`, `Password`, `Email`, `Gender`, `Color`) VALUES ('$msg', '$pwd', '$mail', '$gender', '$color');";
+    $sql = "INSERT INTO `data` (`name`, `Password`, `Email`, `national_id`) VALUES ('$msg', '$pwd', '$mail', '$national_id');";
     $send = mysqli_query($conn, $sql);
 ?>

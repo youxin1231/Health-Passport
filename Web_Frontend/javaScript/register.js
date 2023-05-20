@@ -17,9 +17,7 @@ function insertData(){
             msg: $("#msg").val(),
             pwd: $("#pwd").val(),
             mail: $("#mail").val(),
-            color: $("#color").val(),
-            gender: getRadioValue('gender')
-
+            national_id: $("#national_id").val(),
         },
         error: function(xhr, ajaxOptions, thrownError) {
             console.log(xhr.status);

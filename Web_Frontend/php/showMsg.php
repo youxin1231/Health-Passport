@@ -4,7 +4,7 @@
 	$conn=mysqli_connect("localhost:3306","root","","health_passport");
 	mysqli_query($conn,"set names utf8");
 
-    $sql = "SELECT `Name`, Email, Gender, Color FROM `data`";
+    $sql = "SELECT `Name`, Email, national_id FROM `data`";
     $send = mysqli_query($conn, $sql);
         
     $rs = mysqli_fetch_row($send);
