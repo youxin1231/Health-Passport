@@ -1,0 +1,24 @@
+#title{
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-body{
+    margin-left: 10%; 
+}
+
+input[type="text"] , input[type="password"]{
+    width: 85%;
+}
+
+input[type="color"] {
+    margin-left: 20px;
+    height: 20px;
+    width: 80px;
+}
+
+.rowItem{
+    margin-top: 20px;
+}

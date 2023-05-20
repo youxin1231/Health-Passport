@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #3364a2 !important;">
+    <div class="container-fluid">
+      <div class="navbar-brand" style="color: #fcfeff;">Health Passport</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a id="list" class="nav-link" href="#" onclick="changeURL('homePage.html')">Member list</a>
+          </li>
+          <li class="nav-item">
+            <a id="data" class="nav-link" href="#" onclick="changeURL('modifyData.html')">Modify data</a>
+          </li>
+          <li class="nav-item">
+            <a id="file" class="nav-link" href="#" onclick="changeURL('fileManager.html')">File manager</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Message board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Subscribe</a>
+          </li>
+        </ul>
+        <span class="navbar-text" style="margin-right: 2%; font-weight: bold; color: white;">
+            Hello 
+            <label id="username">
+            </label>
+            !
+        </span>
+        <a href="signIn.html"><button class="btn" type="submit" style="background-color: #cbdef1">Log out</button></a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    function changeURL(e){
+      var name = document.getElementById('username').innerHTML;
+      var url =  e + "?username=" + name;
+      location.href=url;
+    }
+
+    var url = location.href;
+    if(url.indexOf('?')!=-1){
+      var ary1 = url.split('?');
+      var ary2 = ary1[1].split('&');
+      var ary3 = ary2[0].split('=');
+      var user = ary3[1];
+    }
+    $("#username").html(user);
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/homePage.html')
+      $('#list').addClass('active');
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/modifyData.html')
+      $('#data').addClass('active');
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/fileManager.html')
+      $('#file').addClass('active');
+  </script>
