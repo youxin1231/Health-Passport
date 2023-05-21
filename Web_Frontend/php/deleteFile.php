@@ -8,5 +8,6 @@
 
     $sql = "DELETE FROM `file` WHERE `Name`='$fname' AND `User`='$user'";
     $result = mysqli_query($conn, $sql);
-    echo 0;
+    $status=unlink('../../File_data/'.$fname);
+    echo $status;
 ?>

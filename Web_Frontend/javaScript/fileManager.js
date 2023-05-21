@@ -119,9 +119,12 @@ $("#tableId").on('click', '.del', function(val){
             console.log(xhr.status);
             console.log(thrownError);
         },
-        success: function(output) {
-            console.log(output);
-            alert("Delete success!");
+        success: function(status) {
+            if (status == 1){
+                alert("Delete successed!");
+            }else {
+                alert("Delete failed!");
+            }
             refresh();
         },
     });
@@ -142,7 +145,6 @@ $("#but_upload").click(function(){
     // Check file selected or not
     fd.append('file',files[0]);
     fd.append('name',name);
-
     $.ajax({
         url: '../php/uploadFile.php',
         type: 'post',
