@@ -37,7 +37,7 @@ function refresh() {
                 table += "<tr><td>" + output[num][0] + "</td>";
                 table += "<td>" + output[num][1] + "</td>";
                 table += "<td>" + output[num][2] + "</td>";
-                table += "<td><button id=\"e" + output[num][0] + "\" class=\"btn btn-secondary edit\"><i class=\"fa fa-edit\"></i></button>" +
+                table += "<td><button id=\"s" + output[num][0] + "\" class=\"btn btn-secondary show_\"><i class=\"fa fa-eye\" data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\"></i></button><button id=\"e" + output[num][0] + "\" class=\"btn btn-secondary edit\"><i class=\"fa fa-edit\"></i></button>" +
                 "<a href=\"../php/downloadFile.php?filename=" + output[num][0] + "\"><button id=\"l" + output[num][0] + "\" class=\"btn btn-secondary dl\"><i class=\"fa fa-download\"></i></button></a>" + 
                 "<button id=\"d" + output[num][0] + "\" class=\"btn btn-secondary del\"><i class=\"fa fa-trash\"></i></button></td></tr>";
             
@@ -47,6 +47,13 @@ function refresh() {
         }
     });
 };
+
+$("#tableId").on('click', '.show_', function(val){
+    var frame = document.getElementById("pdf-iframe");
+    var string = val.currentTarget.id;
+    var filename = string.substr(1);
+    frame.src = `../web/viewer.html?file=../../File_data/${filename}`
+});
 
 $("#tableId").on('click', '.edit', function(val){
     var url = location.href;
@@ -108,6 +115,7 @@ $("#tableId").on('click', '.del', function(val){
     var string = val.currentTarget.id;
     var NewArray = new Array();
     var NewArray = string.substr(1);
+    
     $.ajax({
         type: "POST",
         url: "../php/deleteFile.php",
