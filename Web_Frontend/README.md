@@ -11,7 +11,7 @@ sudo apt install php
 ```bash=
 $ sudo /opt/lampp/manager-linux-x64.run 
 ```
-- start MySQL and Web Server:
+- start MySQL and Web Server:  
 ![image alt](https://i.imgur.com/V8Wf0KQ.png)
 - (another terminal):
 ```bash=
