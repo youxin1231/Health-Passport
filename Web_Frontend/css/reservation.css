@@ -1,0 +1,10 @@
+input[type="radio"] {
+    -ms-transform: scale(2); /* IE 9 */
+    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+    transform: scale(2);
+}
+
+.radio-content{
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -59,7 +59,7 @@ $("#tableId").on('click', '.edit', function(val){
 
     var string = val.currentTarget.id;
     var NewArray = new Array();
-    var NewArray = string.split("e");
+    var NewArray = string.substr(1);
 
     var newfname = window.prompt('Input the new name over here.');
     if (newfname == null || newfname == "") {
@@ -69,7 +69,7 @@ $("#tableId").on('click', '.edit', function(val){
             type: "POST",
             url: "../php/editFile.php",
             data:{
-                fname: NewArray[1],
+                fname: NewArray,
                 user: name,
                 newfname: newfname
             },
@@ -107,12 +107,12 @@ $("#tableId").on('click', '.del', function(val){
 
     var string = val.currentTarget.id;
     var NewArray = new Array();
-    var NewArray = string.split("d");
+    var NewArray = string.substr(1);
     $.ajax({
         type: "POST",
         url: "../php/deleteFile.php",
         data:{
-            fname: NewArray[1],
+            fname: NewArray,
             user: name
         },
         error: function(xhr, ajaxOptions, thrownError) {
