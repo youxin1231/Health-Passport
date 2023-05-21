@@ -12,7 +12,7 @@
 
     $sql = "UPDATE `file` SET `Name`='$newfname', `TimeStamp`='$timestamp' WHERE `Name`='$fname' AND `User`='$user';";
     $result = mysqli_query($conn, $sql);
-    $file = 'D:\xampp\htdocs\WebPractice\'' + $fname;
-    $rename = 'D:\xampp\htdocs\WebPractice\'' + $newfname;
+    $file = "../../File_data/" + $fname;
+    $rename = "../../File_data/" + $newfname;
     rename($file,$rename);
 ?>
