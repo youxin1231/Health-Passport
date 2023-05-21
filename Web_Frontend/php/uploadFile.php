@@ -28,7 +28,8 @@
         $send = mysqli_query($conn, $sql1);
 
         /*upload to local computer*/
-        /* Location */   $location = "D://xampp/htdocs/WebPractice/".$filename;
+        /* Location */
+        $location = "../../File_data/".$filename;
         $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
         $imageFileType = strtolower($imageFileType);
 

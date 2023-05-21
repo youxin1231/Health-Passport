@@ -142,6 +142,7 @@ $("#but_upload").click(function(){
     // Check file selected or not
     fd.append('file',files[0]);
     fd.append('name',name);
+
     $.ajax({
         url: '../php/uploadFile.php',
         type: 'post',
