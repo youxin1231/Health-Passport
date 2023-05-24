@@ -1,9 +1,10 @@
 # Execute project
 ## Prerequirement
+- ubuntu 20.04 (Optimal)
 - xampp 8.0.28 ([download link](https://www.apachefriends.org/zh_tw/download.html))
 - php package
 ```bash=
-sudo apt install php
+$ sudo apt install php
 ```
 
 ## Setup
@@ -18,5 +19,5 @@ $ sudo /opt/lampp/manager-linux-x64.run
 $ cd /to/our/project/
 $ php -S localhost:8080
 ```
-- Then, open Web browser, enter url: "localhost:8080/Web_Frontend/html/inrto.html"
+- Then, open Web browser, enter url: "localhost:8080/Web_Frontend/html/intro.html"
 - Enjoy the web page.
