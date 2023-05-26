@@ -8,16 +8,28 @@ $ sudo apt install php
 ```
 
 ## Setup
-- (one terminal) Start Xampp: 
+- (In terminal) Start Xampp: 
 ```bash=
 $ sudo /opt/lampp/manager-linux-x64.run 
 ```
-- start MySQL and Web Server:  
+
+## Create database
+- Step1: Start MySQL and Web Server:  
 ![image alt](https://i.imgur.com/V8Wf0KQ.png)
-- (another terminal):
+
+- Step2: Enter [MySQL database](http://localhost/phpmyadmin)
+- Step3: Create 2 databases **"data"**, **"file"**.  
+  ![image alt](https://i.imgur.com/X5Uybe1.png)
+- Step4: **"data"** database structure.  
+  ![image alt](https://i.imgur.com/kGPaPht.png)
+- Step5: **"file"** database structure.  
+  ![iamge alt](https://i.imgur.com/vih6u5Q.png)
+
+# Enter webpage
+- (In terminal):
 ```bash=
-$ cd /to/our/project/
+$ cd ./Health_Passport
 $ php -S localhost:8080
 ```
-- Then, open Web browser, enter url: "localhost:8080/Web_Frontend/html/intro.html"
-- Enjoy the web page.
+- Then, open Web browser, enter [intro page](http://localhost:8080/Web_Frontend/html/intro.html).
+- Enjoy the webpage.
