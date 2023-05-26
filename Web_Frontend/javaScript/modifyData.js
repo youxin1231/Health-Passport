@@ -62,43 +62,48 @@ $(document).ready(function(e) {
     });
 
     $("#send").click(function() {
-        $.ajax({
-            type: "POST",
-            url: "../php/updateData.php",
-            data: {
-                oldname: name,
-                First_name: $("#setFirst_Name").val(),
-                Last_name: $("#setLast_Name").val(),
-                Email: $("#setEmail").val(),
-                National_ID: $("#setNational_ID").val(),
-                Phone_Number: $("#setPhone_Number").val(),
-                Gender: $("#setGender").val(),
-                Age: $("#setAge").val(),
-                Weight: $("#setWeight").val(),
-                Height: $("#setHeight").val(),
-                Body_Temperature: $("#setBody_Temperature").val(),
-                PULSE: $("#setPULSE").val(),
-                RESPR: $("#setRESPR").val(),
-                BPSYS: $("#setBPSYS").val(),
-                BPDIAS: $("#setBPDIAS").val(),
-                POPCT: $("#setPOPCT").val(),
-                drug_history: $("#setDrug_history").val(),
-                medical_history: $("#setMedical_history").val(),
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                console.log(xhr.status);
-                console.log(thrownError);
-            },
-            success: function(output) {
-                console.log(output);
-                if (output == 1) {
-                    alert("User name already in use!");
+        if($("#setFirst_Name").val() != "" && $("#setLast_Name").val() != "" && $("#setEmail").val() != "" && $("#setNational_ID").val() != "" && $("#setPhone_Number").val() != "" && $("#setGender").val() != "" && $("#setAge").val() != "" && $("#setWeight").val() != "" && $("#setHeight").val() != "" && $("#setBody_Temperature").val() != "" && $("#setPULSE").val() != "" && $("#setRESPR").val() != "" && $("#setBPSYS").val() != "" && $("#setBPDIAS").val() != "" && $("#setPOPCT").val() != ""){
+            $.ajax({
+                type: "POST",
+                url: "../php/updateData.php",
+                data: {
+                    oldname: name,
+                    First_name: $("#setFirst_Name").val(),
+                    Last_name: $("#setLast_Name").val(),
+                    Email: $("#setEmail").val(),
+                    National_ID: $("#setNational_ID").val(),
+                    Phone_Number: $("#setPhone_Number").val(),
+                    Gender: $("#setGender").val(),
+                    Age: $("#setAge").val(),
+                    Weight: $("#setWeight").val(),
+                    Height: $("#setHeight").val(),
+                    Body_Temperature: $("#setBody_Temperature").val(),
+                    PULSE: $("#setPULSE").val(),
+                    RESPR: $("#setRESPR").val(),
+                    BPSYS: $("#setBPSYS").val(),
+                    BPDIAS: $("#setBPDIAS").val(),
+                    POPCT: $("#setPOPCT").val(),
+                    drug_history: $("#setDrug_history").val(),
+                    medical_history: $("#setMedical_history").val(),
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                },
+                success: function(output) {
+                    console.log(output);
+                    if (output == 1) {
+                        alert("User name already in use!");
+                    }
+                    else {
+                        alert("Success!");
+                        changeURL('homePage.html');
+                    }
                 }
-                else {
-                    alert("Success!");
-                    changeURL('homePage.html');
-                }
-            }
-        });
+            });
+        }
+        else{
+            alert("It couldn't be empty!");
+        }
     });
 });

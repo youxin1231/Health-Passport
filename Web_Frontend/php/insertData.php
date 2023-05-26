@@ -9,6 +9,6 @@
     $national_id = $_POST['national_id'];
 
 
-    $sql = "INSERT INTO `data` (`name`, `Password`, `Email`, `national_id`) VALUES ('$msg', '$pwd', '$mail', '$national_id');";
+    $sql = "INSERT INTO `data` (`name`, `password`, `Email`, `national_id`) VALUES ('$msg', '$pwd', '$mail', '$national_id');";
     $send = mysqli_query($conn, $sql);
 ?>
