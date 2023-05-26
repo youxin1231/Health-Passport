@@ -6,7 +6,7 @@
 
     $msg = $_POST['msg'];
 
-    $sql = "SELECT `Password`, Email, Gender, Color, `Name` FROM `data` WHERE `Name`='$msg'";
+    $sql = "SELECT * FROM `data` WHERE `Name`='$msg'";
     $send = mysqli_query($conn, $sql);
 
     $rs = mysqli_fetch_row($send);

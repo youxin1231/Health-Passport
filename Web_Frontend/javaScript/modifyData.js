@@ -1,3 +1,9 @@
+function changeURL(e){
+    var name = document.getElementById('username').innerHTML;
+    var url =  e + "?username=" + name;
+    location.href=url;
+}
+
 function getRadioValue(name){
     var radioes = document.getElementsByName(name);
     for(var i=0;i<radioes.length;i++)
@@ -31,46 +37,66 @@ $(document).ready(function(e) {
         },
         success: function(output) {
             output = $.parseJSON(output);
-            console.log(output);
-            document.getElementById('setPwd').setAttribute('value',output[0]);
-            document.getElementById('setMail').setAttribute('value',output[1]);
-            if (output[2] == 'Male')
-                document.querySelector('[value="Male"]').checked = true;
-            else
-                document.querySelector('[value="Female"]').checked = true;
-            document.getElementById('setColor').setAttribute('value',output[3]);
-            document.getElementById('setName').setAttribute('value',output[4]);
+            console.log(output)
+            document.getElementById('setFirst_Name').setAttribute('value',output[2]);
+            document.getElementById('setLast_Name').setAttribute('value',output[3]);
+            document.getElementById('setEmail').setAttribute('value',output[5]);
+            document.getElementById('setNational_ID').setAttribute('value',output[6]);
+            document.getElementById('setPhone_Number').setAttribute('value',output[7]);
+            document.getElementById('setGender').setAttribute('value',output[8]);
+            document.getElementById('setAge').setAttribute('value',output[9]);
+            document.getElementById('setWeight').setAttribute('value',output[10]);
+            document.getElementById('setHeight').setAttribute('value',output[11]);
+            document.getElementById('setBody_Temperature').setAttribute('value',output[12]);
+            document.getElementById('setPULSE').setAttribute('value',output[13]);
+            document.getElementById('setRESPR').setAttribute('value',output[14]);
+            document.getElementById('setBPSYS').setAttribute('value',output[15]);
+            document.getElementById('setBPDIAS').setAttribute('value',output[16]);
+            document.getElementById('setPOPCT').setAttribute('value',output[17]);
         }
     });
 
     $("#send").click(function() {
-        if($("#setName").val() != "" && $("#setPwd").val() != "" && $("#setMail").val() != ""){
-            $.ajax({
-                type: "POST",
-                url: "../php/updateData.php",
-                data: {
-                    oldname: name,
-                    newname: $("#setName").val(),
-                    pwd: $("#setPwd").val(),
-                    mail: $("#setMail").val(),
-                    gender: getRadioValue('gender'),
-                    color: $("#setColor").val()
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    console.log(xhr.status);
-                    console.log(thrownError);
-                },
-                success: function(output) {
-                    console.log(output);
-                    if (output == 1)
-                        alert("User name already in use!");
-                    else
-                        alert("Success!");
-                        location.href = ary1[0] + "?username=" + $("#setName").val();
-                }
-            });
-        }
-        else
-            alert("It couldn't be empty!");
+        $.ajax({
+            type: "POST",
+            url: "../php/updateData.php",
+            data: {
+                oldname: name,
+                First_name: $("#setFirst_Name").val(),
+                Last_name: $("#setLast_Name").val(),
+                Email: $("#setEmail").val(),
+                National_ID: $("#setNational_ID").val(),
+                Phone_Number: $("#setPhone_Number").val(),
+                Gender: $("#setGender").val(),
+                Age: $("#setAge").val(),
+                Weight: $("#setWeight").val(),
+                Height: $("#setHeight").val(),
+                Body_Temperature: $("#setBody_Temperature").val(),
+                PULSE: $("#setPULSE").val(),
+                RESPR: $("#setRESPR").val(),
+                BPSYS: $("#setBPSYS").val(),
+                BPDIAS: $("#setBPDIAS").val(),
+                POPCT: $("#setPOPCT").val(),
+                drug_history: $("#setDrug_history").val(),
+                medical_history: $("#setMedical_history").val(),
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status);
+                console.log(thrownError);
+            },
+            success: function(output) {
+                console.log(output);
+                if (output == 1)
+                    alert("User name already in use!");
+                else
+                    alert("Success!");
+                    location.href = ary1[0] + "?username=" + $("#setName").val();
+            }
+        });
     });
+});
+
+$("#send").click(function(){
+    window.alert("Submit success!");
+    changeURL("homePage.html");
 });
