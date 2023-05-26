@@ -21,7 +21,7 @@ $ sudo /opt/lampp/manager-linux-x64.run
 - Step3: Create 2 databases **"data"**, **"file"**.  
   ![image alt](https://i.imgur.com/X5Uybe1.png)
 - Step4: **"data"** database structure.  
-  ![image alt](https://i.imgur.com/fE4aAol.png)
+  ![image alt](https://i.imgur.com/tYnPcd2.png)
 - Step5: **"file"** database structure.  
   ![iamge alt](https://i.imgur.com/vih6u5Q.png)
 
