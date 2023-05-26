@@ -13,53 +13,120 @@
   <header style="height: 50px"></header>
   <div class="container-sm" style="max-width: 80%;">
     <div class="table-wrapper">
+      <h3>Basic Information</h3>
       <table class="table">
-        <thead>
-          <tr>
-            <th>User Name</th>
-            <th>Password</th>
-            <th>Gender</th>
-            <th>Color</th>
-            <th>Email</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
-            <td data-title="Name">
-              <div class="item">
-                <input id="setName" type="text">
+            <td data-title="First_Name">
+              <div class="form__group field">
+                <input id="setFirst_Name" type="text" class="form__field" placeholder="First_name" name="First_Name"/>
+                <label for="setFirst_Name" class="form__label">First Name</label>
               </div>
             </td>
-            <td data-title="Password">
-              <div class="item">
-                <input id="setPwd" type="password">
-              </div>
-            </td>
-            <td data-title="Gender">
-              <div class="item">
-                <span>
-                  <input type="radio" name="gender" value="Male">
-                  <label>Male</label>
-                  <input type="radio" name="gender" value="Female">
-                  <label>Female</label>
-                </span>
-              </div>
-            </td>
-            <td data-title="Color">
-              <div class="item">
-                <input id="setColor" type="color">
+            <td data-title="Last_Name">
+              <div class="form__group field">
+                <input id="setLast_Name" type="text" class="form__field" placeholder="Last_name" name="Last_Name"/>
+                <label for="setLast_Name" class="form__label">Last Name</label>
               </div>
             </td>
             <td data-title="Email">
-              <div class="item">
-                <input id="setMail" type="text">
+              <div class="form__group field">
+                <input id="setEmail" type="email" class="form__field" placeholder="Email" name="Email"/>
+                <label for="setEmail" class="form__label">Email</label>
+              </div>
+            </td>
+            <td data-title="National_ID">
+              <div class="form__group field">
+                <input id="setNation_ID" type="text" class="form__field" placeholder="National_ID" name="National_ID"/>
+                <label for="setNation_ID" class="form__label">National ID</label>
+              </div>
+            </td>
+            <td data-title="Phone_Number">
+              <div class="form__group field">
+                <input id="setPhone_Number" type="tel" class="form__field" placeholder="Phone_Number" name="Phone_Number"/>
+                <label for="setPhone_Number" class="form__label">Phone Number</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <header style="height: 50px"></header>
+      <h3>Healthy Information</h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td data-title="Gender">
+              <div class="form__group field">
+                <input id="setGender" list="typelist" class="form__field" placeholder="Gender" name="Gender"/>
+                <datalist id="typelist">
+                  <option>Male</option>
+                  <option>Female</option>
+                </datalist>
+                <label for="setGender" class="form__label">Gender</label>
+              </div>
+            </td>
+            <td data-title="Age">
+              <div class="form__group field">
+                <input id="setAge" type="number" class="form__field" placeholder="Age" name="Age" min="1" max="150"/>
+                <label for="setAge" class="form__label">Age</label>
+              </div>
+            </td>
+            <td data-title="Weight">
+              <div class="form__group field">
+                <input id="setWeight" type="text" class="form__field" placeholder="Weight" name="Weight"/>
+                <label for="setWeight" class="form__label">Weight (kg)</label>
+              </div>
+            </td>
+            <td data-title="Height">
+              <div class="form__group field">
+                <input id="setHeight" type="text" class="form__field" placeholder="Height" name="Height"/>
+                <label for="Height" class="form__label">Height (cm)</label>
+              </div>
+            </td>
+            <td data-title="Body_Temperature">
+              <div class="form__group field">
+                <input id="setBody_Temperature" type="text" class="form__field" placeholder="Body_Temperature" name="Body_Temperature"/>
+                <label for="setBody_Temperature" class="form__label">Body Temperature (°C)</label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td data-title="PULSE">
+              <div class="form__group field">
+                <input id="setPULSE" type="text" class="form__field" placeholder="PULSE" name="PULSE"/>
+                <label for="setPULSE" class="form__label">Pulses (times / minute)</label>
+              </div>
+            </td>
+            <td data-title="RESPR">
+              <div class="form__group field">
+                <input id="setRESPR" type="text" class="form__field" placeholder="RESPR" name="RESPR"/>
+                <label for="setRESPR" class="form__label">Breaths (times / minute)</label>
+              </div>
+            </td>
+            <td data-title="BPSYS">
+              <div class="form__group field">
+                <input id="setBPSYS" type="text" class="form__field" placeholder="BPSYS" name="BPSYS"/>
+                <label for="setBPSYS" class="form__label">Systolic Blood Pressure</label>
+              </div>
+            </td>
+            <td data-title="BPDIAS">
+              <div class="form__group field">
+                <input id="setBPDIAS" type="text" class="form__field" placeholder="BPDIAS" name="BPDIAS"/>
+                <label for="setBPDIAS" class="form__label">Diastolic Blood Pressure</label>
+              </div>
+            </td>
+            <td data-title="POPCT">
+              <div class="form__group field">
+                <input id="setPOPCT" type="text" class="form__field" placeholder="POPCT" name="POPCT"/>
+                <label for="setPOPCT" class="form__label">Blood Oxygen concentration (%)</label>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
       <ul style="float:right;">
-        <button id="send" type="submit" class="btn btn-primary" style="margin-top: 30px; margin-bottom: 50px">Saved Changed</button>
+        <button id="send" type="submit" class="btn btn-primary" style="margin-top: 30px; margin-bottom: 50px; background-color: #117654;">Saved Changed</button>
       </ul>
     </div>
   </div>
