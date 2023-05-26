@@ -12,19 +12,77 @@
   <div id="nav"></div>
   <header style="height: 20px"></header>
   <div class="container-sm" style="max-width: 80%;">
+    <div style="margin-top: 50px;">
+      <h3>Basic Information</h3>
+    </div>
     <table class="table table-hover mt-5">
       <thead>
           <tr>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
+            <th scope="col" style="width: 20%;">First Name</th>
+            <th scope="col" style="width: 20%;">Last Name</th>
+            <th scope="col" style="width: 20%;">Email</th>
+            <th scope="col" style="width: 20%;">National ID</th>
+            <th scope="col" style="width: 20%;">Phone number</th>
           </tr>
       </thead>
-      <tbody id="message_table">
+      <tbody id="message_table1">
       </tbody>
     </table>
+    <div style="margin-top: 50px" class="row">
+      <div class="col">
+        <h3>Healthy Information</h3>
+      </div>
+      <div class="col" style="margin-right: 2vw;">
+        <h5 style="text-align: end;">Healthy Status</h5>
+        <div style="text-align: end;" id="health_status"></div>
+      </div>
+    </div>
+      <table class="table table-hover mt-5">
+      <thead>
+          <tr>
+            <th scope="col" style="width: 20%;">Gender</th>
+            <th scope="col" style="width: 20%;">Age</th>  
+            <th scope="col" style="width: 20%;">Weight (kg)</th>
+            <th scope="col" style="width: 20%;">Height (cm)</th>
+            <th scope="col" style="width: 20%;">Body Temperature (˚C)</th>
+          </tr>
+      </thead>
+      <tbody id="message_table2">
+      </tbody>
+      <table class="table table-hover mt-5">
+        <thead>
+            <tr>
+              <th scope="col" style="width: 20%;">Pulse (times / minutes)</th>
+              <th scope="col" style="width: 20%;">Breaths (times / minutes)</th>  
+              <th scope="col" style="width: 20%;">Systolic blood pressure</th>
+              <th scope="col" style="width: 20%;">Diastolic pressure</th>
+              <th scope="col" style="width: 20%;">Blood oxygen concentration (%)</th>
+            </tr>
+        </thead>
+        <tbody id="message_table3">
+        </tbody>
+    </table>
+    <div style="margin-top: 50px">
+      <h3>History</h3>
+    </div>
+    <div class="row" style="margin-top: 5vh; margin-bottom: 5vh">
+      <div class="col">
+        <div class="card border-light mb-3">
+          <div class="card-header">Drug History</div>
+          <div class="card-body" style="height: 25vh;">
+            <p class="card-text" id="drug_history"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-light mb-3">
+          <div class="card-header">Medical History</div>
+          <div class="card-body" style="height: 25vh;">
+            <p class="card-text" id="medical_history"></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
