@@ -37,7 +37,10 @@ $(document).ready(function(e) {
         },
         success: function(output) {
             output = $.parseJSON(output);
-            console.log(output)
+
+            output[12] = (output[12] - 32) * (5/9);
+            output[12] = output[12].toFixed(2);
+
             document.getElementById('setFirst_Name').setAttribute('value',output[2]);
             document.getElementById('setLast_Name').setAttribute('value',output[3]);
             document.getElementById('setEmail').setAttribute('value',output[5]);
@@ -53,6 +56,8 @@ $(document).ready(function(e) {
             document.getElementById('setBPSYS').setAttribute('value',output[15]);
             document.getElementById('setBPDIAS').setAttribute('value',output[16]);
             document.getElementById('setPOPCT').setAttribute('value',output[17]);
+            document.getElementById('setDrug_history').append(output[18]);
+            document.getElementById('setMedical_history').append(output[19]);
         }
     });
 
@@ -86,17 +91,14 @@ $(document).ready(function(e) {
             },
             success: function(output) {
                 console.log(output);
-                if (output == 1)
+                if (output == 1) {
                     alert("User name already in use!");
-                else
+                }
+                else {
                     alert("Success!");
-                    location.href = ary1[0] + "?username=" + $("#setName").val();
+                    changeURL('homePage.html');
+                }
             }
         });
     });
-});
-
-$("#send").click(function(){
-    window.alert("Submit success!");
-    changeURL("homePage.html");
 });

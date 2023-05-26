@@ -21,14 +21,10 @@
     $POPCT = $_POST['POPCT'];
     $drug_history = $_POST['drug_history'];
     $medical_history = $_POST['medical_history'];
-    $health_score = $_POST['health_score'];
 
-    $check = "SELECT * FROM `data` WHERE `Name`='$newname'";
-    $result = mysqli_query($conn, $check);
-    $num = mysqli_num_rows($result);
+    $Body_Temperature = (float)$Body_Temperature * (9/5) + 32;
 
-    if ($num == 0){
-        $sql = "UPDATE `data` SET `firstName`='$First_name', 
+    $sql = "UPDATE `data` SET `firstName`='$First_name', 
                                 `lastName`='$Last_name', 
                                 `Email`='$Email', 
                                 `national_id`='$National_ID', 
@@ -40,19 +36,14 @@
                                 `RESPR`='$RESPR', 
                                 `BPSYS`='$BPSYS', 
                                 `BPDIAS`='$BPDIAS', 
-                                `РОРСТ`='$РОРСТ', 
+                                `POPCT`='$POPCT', 
                                 `drug_history`='$drug_history', 
-                                `medical_history`='$medical_history', 
-                                `health_score`='$health_score', 
+                                `medical_history`='$medical_history'
                                 WHERE `Name`='$oldname'";
                                 
-        if(!$send = mysqli_query($conn, $sql)) {
-            echo mysqli_error($conn);
-        } else {
-            echo "success";
-        }
-    }
-    else{
-        echo 1;
+    if(!$send = mysqli_query($conn, $sql)) {
+        echo mysqli_error($conn);
+    } else {
+        echo "success";
     }
 ?>
