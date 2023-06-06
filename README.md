@@ -40,3 +40,8 @@ $ php -S localhost:8080
 - Then, open Web browser, install [MetaMask extension](https://metamask.io/download/).
 - Enter [intro page](http://localhost:8080/Web_Frontend/html/intro.html).
 - Enjoy the webpage.
+![image alt](https://i.imgur.com/IvO0OPL.png)
+![image alt](https://i.imgur.com/hrSccnB.png)
+![image alt](https://i.imgur.com/MhkPpXU.png)
+![image alt](https://i.imgur.com/MGVYHpm.png)
+![image alt](https://i.imgur.com/ji54ORt.png)
