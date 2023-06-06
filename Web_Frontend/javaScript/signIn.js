@@ -17,6 +17,8 @@ $(document).ready(function(e) {
                     console.log(output);
                     var name = $("#msg").val();
                     if (output == 1){
+                        userLoginOut();
+                        setPublicName();
                         window.location.href="homePage.html?username=" + name;
                     }
                     else
