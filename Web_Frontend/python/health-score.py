@@ -18,11 +18,12 @@ if(score_df.shape[1]==7):
 else:
     X = score_df
 
-scalar = StandardScaler()
+scalar = pickle.load(open('./model/scalar.sav', 'rb'))
+# scalar = StandardScaler()
 X_test = X
-X_test = scalar.fit_transform(X_test)
+X_test = scalar.transform(X_test)
 name = 'Support Vector Machine.sav'
-model = pickle.load(open('./model/Support Vector Machine.sav', 'rb'))
+model = pickle.load(open('./model/svc.sav', 'rb'))
 y_pred = model.predict(X_test)
 pd.DataFrame(y_pred).to_csv("../../Web_Frontend/result.csv")
 
