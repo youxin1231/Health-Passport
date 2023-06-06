@@ -157,9 +157,6 @@ $(document).ready(function(e) {
         }
     });
 
-
-
-    
     $("#send").click(function() {
         $.ajax({
             url: "../php/getcsv.php",

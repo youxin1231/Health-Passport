@@ -1,11 +1,5 @@
 import sys
-print (sys.path)
-sys.path.append('c:/users/105/appdata/roaming/python/python38/site-packages')
-sys.path.append('c:/python38/lib/site-packages')
 import pandas as pd
-# print('lskdjfslf')
-
-
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -15,10 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 import pymysql
 
-
-
-score_df = pd.read_csv(r"C:\wamp64\www\Health-Passport\Web_Frontend\raw_data.csv")
-# score_df = pd.read_csv(r"C:\Users\105\Downloads\Patient Severity Score for Electronic Health Records.csv")
+score_df = pd.read_csv("../../Web_Frontend/raw_data.csv")
 score_df.head()
 
 
@@ -33,7 +24,8 @@ X_test = scalar.fit_transform(X_test)
 name = 'Support Vector Machine.sav'
 model = pickle.load(open('./model/Support Vector Machine.sav', 'rb'))
 y_pred = model.predict(X_test)
-pd.DataFrame(y_pred).to_csv("C://wamp64//www//Health-Passport//Web_Frontend//result.csv")
+print(y_pred)
+pd.DataFrame(y_pred).to_csv("../../Web_Frontend/result.csv")
 
 
 con = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='health_passport', charset='utf8')
