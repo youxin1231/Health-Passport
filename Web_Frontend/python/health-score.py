@@ -24,7 +24,6 @@ X_test = scalar.fit_transform(X_test)
 name = 'Support Vector Machine.sav'
 model = pickle.load(open('./model/Support Vector Machine.sav', 'rb'))
 y_pred = model.predict(X_test)
-print(y_pred)
 pd.DataFrame(y_pred).to_csv("../../Web_Frontend/result.csv")
 
 

@@ -165,18 +165,6 @@ $(document).ready(function(e) {
             },
             success: function(output) {
                 console.log(output);
-                //alert("read csv success");
-
-                if (output == 0) {
-                    
-                    alert("read csv success");
-
-                    // checkelement(e);
-                }
-                else{
-                    alert("error");
-                }
-                
             }
         });
     });
