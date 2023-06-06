@@ -121,8 +121,8 @@ if ($request == "updatePublicName") {
   $address = $data->address;
 
   // Check if the user is logged in
-  try { $JWT = JWT::decode($data->JWT, $GLOBALS['JWT_secret']); }
-  catch (\Exception $e) { echo 'Authentication error'; exit; }
+  // try { $JWT = JWT::decode($data->JWT, $GLOBALS['JWT_secret']); }
+  // catch (\Exception $e) { echo 'Authentication error'; exit; }
 
   // Prepared statement to protect against SQL injections
   $stmt = $conn->prepare("UPDATE $tablename SET publicName = ? WHERE address = '".$address."'");

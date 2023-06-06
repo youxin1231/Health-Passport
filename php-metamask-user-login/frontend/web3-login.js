@@ -123,6 +123,8 @@ async function userLogin() {
               userLoginData.ethAddress = address;
               userLoginData.publicName = response.data[1];
               userLoginData.JWT = response.data[2];
+              setPublicName();
+              window.location.href="homePage.html?username=" + userLoginData.publicName;
               localStorage.clear();
             }
           })
@@ -156,6 +158,7 @@ function setPublicName() {
     console.log(response.data);
   })
   .catch(function(error) {
+    console.log("asdadasda");
     console.error(error);
   });
 }

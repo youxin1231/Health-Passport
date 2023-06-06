@@ -18,8 +18,7 @@ $(document).ready(function(e) {
                     var name = $("#msg").val();
                     if (output == 1){
                         userLoginOut();
-                        setPublicName();
-                        window.location.href="homePage.html?username=" + name;
+                        // window.location.href="homePage.html?username=" + name;
                     }
                     else
                         $("#warning").html("User name or password incorrect!");
