@@ -59,15 +59,25 @@ function refresh() {
             var d_history = output[0][15];
             var med_history = output[0][16];
 
-            var health_status = "";
-            if (output[0][17] > 70) {
+            // var health_status = "";
+            // var num = 0;
+            // var res = (Number(output[num][7]) + Number(output[num][8]) + Number(output[num][10]) + Number(output[num][11]) + Number(output[num][12]) + Number(output[num][13]))%100;
+            // // console.log(res);
+            // if (res >= 40){
+            //     health_status = "<img src=\"../image/smiling-face.png\" alt=\"smile\" style=\"height: 25px; width: 25px\"></img>";
+            // } else if (res < 40 && res > 20) {  
+            //     health_status = "<img src=\"../image/meh.png\" alt=\"meh\" style=\"height: 25px; width: 25px\"></img>";
+            // } else {
+            //     health_status = "<img src=\"../image/sad.png\" alt=\"sad\" style=\"height: 25px; width: 25px\"></img>";
+            // }
+            
+            if (output[0][17] <=1) {
                 health_status = "<img src=\"../image/smiling-face.png\" alt=\"smile\" style=\"height: 25px; width: 25px\"></img>";
-            } else if (output[0][17] <= 70 && output[0][17] > 50) {
+            } else if (output[0][17] ==2) {
                 health_status = "<img src=\"../image/meh.png\" alt=\"meh\" style=\"height: 25px; width: 25px\"></img>";
             } else {
                 health_status = "<img src=\"../image/sad.png\" alt=\"sad\" style=\"height: 25px; width: 25px\"></img>";
             }
-
 
             $("#message_table1").html(table1);
             $("#message_table2").html(table2);
